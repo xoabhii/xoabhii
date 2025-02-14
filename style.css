@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+/* Floating Hearts in Background */
+.floating-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 24px;
+    color: #ff4b5c;
+    animation: floatHearts 5s linear infinite;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+
+.container {
+    max-width: 400px;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Cards */
+.card {
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.5s ease;
+}
+
+.card.active {
+    display: block;
+    animation: popUp 0.7s ease-in-out;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    border: none;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+}
+
+/* Final Message Glow */
+.glow {
+    animation: glowEffect 2s infinite alternate;
+}
+
+@keyframes glowEffect {
+    from { text-shadow: 0 0 5px red, 0 0 10px pink; }
+    to { text-shadow: 0 0 15px red, 0 0 30px pink; }
+}
+
+/* Sparkle Effect */
+.sparkle {
+    animation: sparkleEffect 1.5s infinite alternate;
+}
+
+@keyframes sparkleEffect {
+    from { opacity: 0.5; }
+    to { opacity: 1; transform: scale(1.1); }
+}

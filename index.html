@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-hearts"></div> <!-- Background Hearts Animation -->
+
+    <div class="container">
+        <div class="card active" id="q1">
+            <h1 class="message">Will you be my Valentine? 💝</h1>
+            <div class="btn-container">
+                <button class="btn yes" onclick="nextQuestion(1)">Yes! ❤️</button>
+                <button class="btn no" id="noBtn" onclick="handleNo(1)" onmouseover="dodgeNo()" ontouchstart="dodgeNo()">No 😢</button>
+            </div>
+        </div>
+
+        <div class="card" id="q2">
+            <h1 class="message">Romantic dinner with me? 🍷🍽️</h1>
+            <div class="btn-container">
+                <button class="btn yes" onclick="nextQuestion(2)">Of course! 🌹</button>
+                <button class="btn no" onclick="handleNoOther()">No, I'm busy 😞</button>
+            </div>
+        </div>
+
+        <div class="card" id="q3">
+            <h1 class="message">Can I have a warm hug? 🤗</h1>
+            <div class="btn-container">
+                <button class="btn yes" onclick="nextQuestion(3)">Come here! 🤗❤️</button>
+                <button class="btn no" onclick="handleNoOther()">Maybe later 😢</button>
+            </div>
+        </div>
+
+        <div class="card" id="q4">
+            <h1 class="message">Let's stargaze together! ✨🌙</h1>
+            <div class="btn-container">
+                <button class="btn yes" onclick="nextQuestion(4)">That sounds magical! 💫</button>
+                <button class="btn no" onclick="handleNoOther()">I prefer sleeping 😴</button>
+            </div>
+        </div>
+
+        <div class="card" id="q5">
+            <h1 class="message">Can I get a kiss? 😘</h1>
+            <div class="btn-container">
+                <button class="btn yes" onclick="finalMessage()">Muah! 💋</button>
+                <button class="btn no" onclick="handleNoOther()">Too shy 😳</button>
+            </div>
+        </div>
+
+        <div class="card final-card" id="final">
+            <h1 class="message glow">You made my heart so happy! ❤️🎉</h1>
+            <div class="inner-hearts"></div>
+            <p class="final-text sparkle">Love you forever! 💕</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
